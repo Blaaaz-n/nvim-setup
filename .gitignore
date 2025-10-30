@@ -1,0 +1,60 @@
+# ─────────────────────────────
+# 🧠 Neovim + Lazy.nvim ignores
+# ─────────────────────────────
+
+# Lazy.nvim plugin data & lock file
+lazy-lock.json
+.lazy/
+.local/
+state/
+.cache/
+session/
+undo/
+swap/
+shada/
+shada/main.shada
+health/
+tmp/
+plugin/
+pack/
+site/
+autoload/
+tags
+
+# ─────────────────────────────
+# 🧹 OS & editor temporary files
+# ─────────────────────────────
+
+# macOS
+.DS_Store
+
+# Linux temporary files
+*~
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Editors / IDEs
+*.swp
+*.swo
+*.bak
+*.tmp
+.idea/
+.vscode/
+*.log
+
+# ─────────────────────────────
+# 🧰 Optional backups or extras
+# ─────────────────────────────
+
+# Backup files created by some plugins
+*.old
+*.orig
+*.save
+*.backup
+
+# Custom logs or debug files
+nvim.log
+

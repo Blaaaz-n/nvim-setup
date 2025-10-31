@@ -43,4 +43,41 @@ require("lazy").setup({
 			require("nvim-treesitter.configs").setup(opts)
 		end,
 	},
+	{
+		"mbbill/undotree",
+		cmd = "UndotreeToggle",
+		keys = {
+			{ "<leader>u", "<cmd>UndotreeToggle<CR>", desc = "Toggle UndoTree" },
+		},
+		config = function()
+			vim.opt.undofile = true
+			vim.opt.undodir = vim.fn.stdpath("data") .. "/undo"
+		end,
+	},
+	{
+		"VonHeikemen/lsp-zero.nvim",
+		branch = "v3.x",
+		dependencies = {
+			-- LSP
+			"neovim/nvim-lspconfig",
+			{ "williamboman/mason.nvim", build = ":MasonUpdate" },
+			"williamboman/mason-lspconfig.nvim",
+
+			-- Autocompletion
+			"hrsh7th/nvim-cmp",
+			"hrsh7th/cmp-nvim-lsp",
+			"hrsh7th/cmp-buffer",
+			"hrsh7th/cmp-path",
+			"saadparwaiz1/cmp_luasnip",
+
+			-- Snippets
+			"L3MON4D3/LuaSnip",
+		},
+		config = function()
+			local lsp = require("lsp-zero").preset("recommended")
+			lsp.setup()                 -- no keymaps here; keep it minimal
+			vim.diagnostic.config({ virtual_text = true })
+		end,
+	}
+
 })

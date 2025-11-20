@@ -34,7 +34,7 @@ require("lazy").setup({
 				"html", "css", "javascript", "typescript",
 				-- your stacks
 				"kotlin", "java", "c", "cpp", "c_sharp",
-				"tsx", "dockerfile", "sql", "python",
+				"tsx", "dockerfile", "sql", "python", "xml",
 				-- nice extras
 				"markdown", "markdown_inline", "regex", "query"
 			},
@@ -58,26 +58,16 @@ require("lazy").setup({
 		"VonHeikemen/lsp-zero.nvim",
 		branch = "v3.x",
 		dependencies = {
-			-- LSP
 			"neovim/nvim-lspconfig",
 			{ "williamboman/mason.nvim", build = ":MasonUpdate" },
 			"williamboman/mason-lspconfig.nvim",
-
-			-- Autocompletion
 			"hrsh7th/nvim-cmp",
 			"hrsh7th/cmp-nvim-lsp",
 			"hrsh7th/cmp-buffer",
 			"hrsh7th/cmp-path",
 			"saadparwaiz1/cmp_luasnip",
-
-			-- Snippets
 			"L3MON4D3/LuaSnip",
 		},
-		config = function()
-			local lsp = require("lsp-zero").preset("recommended")
-			lsp.setup()                 -- no keymaps here; keep it minimal
-			vim.diagnostic.config({ virtual_text = true })
-		end,
-	}
+	},
 
 })

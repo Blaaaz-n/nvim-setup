@@ -69,5 +69,19 @@ require("lazy").setup({
 			"L3MON4D3/LuaSnip",
 		},
 	},
+	{
+		"nvim-lualine/lualine.nvim",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+		config = function()
+			require("lualine").setup({
+				options = { theme = "auto", component_separators = "|", section_separators = "" },
+			})
+		end,
+	},
+	{
+		"numToStr/Comment.nvim",
+		event = { "BufReadPost", "BufNewFile" },
+		opts = {},
+	},
 
 })
